@@ -60,8 +60,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }*/
-    @Override
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+    @Autowired
+	public void configure(AuthenticationManagerBuilder auth) throws Exception {
 		 auth.userDetailsService(userDetailsService());
 //		 .passwordEncoder(passwordEncoder());
 		 //fetching the encoded password
